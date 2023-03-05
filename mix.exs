@@ -87,7 +87,9 @@ defmodule Adam.MixProject do
           "cmd tail -n +2 boundary.exs > .boundary.exs",
           "cmd rm boundary.exs"
         ],
-        credo: "credo --config-name app"
+        credo: "credo --config-name app",
+        "phx.digest": "cmd :",
+        "phx.digest.clean": "cmd :"
       ],
       app: :adam,
       boundary: [default: [type: :strict]],
