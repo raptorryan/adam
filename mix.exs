@@ -82,6 +82,9 @@ defmodule Adam.MixProject do
   def project() do
     [
       aliases: [
+        "asset.build": "cmd :",
+        "asset.deploy": "cmd :",
+        "asset.setup": "cmd :",
         "boundary.ex_doc_groups": [
           "boundary.ex_doc_groups",
           "cmd tail -n +2 boundary.exs > .boundary.exs",
