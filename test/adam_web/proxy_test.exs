@@ -192,7 +192,7 @@ defmodule AdamWeb.ProxyTest do
     import Proxy, only: [__sockets__: 0]
 
     test "success" do
-      assert __sockets__() == []
+      assert [{_path, _mod, _opt} | _socket] = __sockets__()
     end
   end
 

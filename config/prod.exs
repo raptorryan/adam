@@ -27,10 +27,17 @@ config :adam, Endpoint,
       keyfile: Path.join(__DIR__, "../priv/adam_web/cert/selfsigned_key.pem")
     ]
   ],
+  live_view: [signing_salt: "njOSbB8KYFDwWY3G"],
   proxy: Proxy,
   pubsub_server: PubSub,
   render_errors: nil,
   secret_key_base: secret_key_base,
+  session: [
+    key: "__Host-session",
+    same_site: "Strict",
+    signing_salt: "HQ8r54JVDvsxQ9yg",
+    store: :cookie
+  ],
   url: [host: nil, path: "/", port: 443, scheme: "https"]
 
 config :adam, Proxy,
@@ -49,6 +56,7 @@ config :adam, Proxy,
       keyfile: Path.join(__DIR__, "../priv/adam_web/cert/selfsigned_key.pem")
     ]
   ],
+  live_view: [signing_salt: "njOSbB8KYFDwWY3G"],
   pubsub_server: PubSub,
   render_errors: nil,
   secret_key_base: secret_key_base,
@@ -60,4 +68,5 @@ config :adam, Proxy,
   ]
 
 config :logger, level: :info
+config :net_diacritical, NetDiacriticalWeb.Endpoint, proxy: Proxy
 config :phoenix, :json_library, Jason

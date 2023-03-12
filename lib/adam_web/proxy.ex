@@ -63,5 +63,13 @@ defmodule AdamWeb.Proxy do
     endpoint.call(conn, endpoint.init(opt))
   end
 
+  for {_rfqdn, {app, endpoint}} <- @vhost do
+    @session Application.compile_env!(app, endpoint)[:session]
+
+    socket "/socket/#{@session[:signing_salt]}",
+           Phoenix.LiveView.Socket,
+           websocket: [connect_info: [session: @session]]
+  end
+
   plug :reverse
 end

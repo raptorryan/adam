@@ -2,7 +2,7 @@ defmodule AdamWeb do
   @moduledoc "Defines commonalities for `Phoenix` modules."
   @moduledoc since: "0.4.0"
 
-  use Boundary, deps: [Adam, Phoenix, Phoenix.PubSub, Plug]
+  use Boundary, deps: [Adam, Phoenix, Phoenix.LiveView, Phoenix.PubSub, Plug]
 
   @typedoc "Represents the connection."
   @typedoc since: "0.4.0"
