@@ -106,7 +106,8 @@ defmodule Adam.MixProject do
         {:ex_doc, "~> 0.29", only: :dev, runtime: false},
         {:jason, "~> 1.4"},
         {:net_diacritical, in_umbrella: true},
-        {:phoenix, "~> 1.7"}
+        {:phoenix, "~> 1.7"},
+        {:phoenix_live_view, "~> 0.18"}
       ],
       deps_path: "../../dep",
       dialyzer: [ignore_warnings: ".dialyzer.exs"],
